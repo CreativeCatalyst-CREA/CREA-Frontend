@@ -23,7 +23,7 @@ const Statistics = () => {
           src="/img/noisy-gradients.png"
           fill
           alt=""
-          className="blur-[200px]"
+          className="blur-[300px]"
         />
       </div>
       <div className="fixed -bottom-96 left-0 -z-10 size-[800px] -rotate-45">
@@ -31,7 +31,7 @@ const Statistics = () => {
           src="/img/noisy-gradients.png"
           fill
           alt=""
-          className="blur-[200px]"
+          className="blur-[300px]"
         />
       </div>
       <section className="container mt-24 flex flex-col items-center">
