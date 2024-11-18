@@ -1,6 +1,69 @@
 import Image from "next/image";
 import Dl from "@/assets/icon/dl.svg";
+import OlSteper from "@/assets/icon/ol-steper.svg";
+import LiSteper from "@/assets/icon/li-steper.svg";
 import Effect from "@/assets/icon/effect.svg";
+
+const steperList = [
+  {
+    title: "Phase 1:Foundation",
+    dateRange: "(August-October)",
+    description: [
+      "Objective: Establish a solid foundation for the project by developing an investor website and securing seed funding.",
+      "Key Activities:",
+      "Investor Website Development: Finalize investor website development, including all necessary features and functionality.",
+      "Marketing and Outreach: Launch marketing campaigns to attract potential investors and raise awareness of the project.",
+      "Fundraising: Secure seed funding through private investors or seed rounds.",
+      "Create a Team: Assemble a core team of developers, designers, and marketers.",
+    ],
+  },
+  {
+    title: "Phase 2: Platform Development",
+    dateRange: "(August-October)",
+    description: [
+      "Objective: Develop core features of the Creative Catalyst platform, including the CREA token, DAO, and grant system.",
+      "Key Activities:",
+      "Development of Smart Contracts: Develop and implement smart contracts for the CREA token, DAO projects, and grant distribution mechanisms.",
+      "Platform Development: Build the frontend and backend infrastructure for the Creative Catalyst platform, including user registration, project submission, and voting features.",
+      "Token Distribution: Conduct an initial coin offering (ICO) to distribute CREA tokens to investors and early adopters.",
+    ],
+  },
+  {
+    title: "Phase 3: Platform Launch and  Community Building",
+    dateRange: "(January-April)",
+    description: [
+      "Objective: Launch the beta version of the Creative Catalyst platform and build an active community of creators, investors, and supporters.",
+      "Main Events:",
+      "Beta Launch: Launch the beta version of the Creative Catalyst platform, allowing users to test and provide feedback.",
+      "Community Engagement: Actively engage with the community through social media, forums, and events to foster a strong and supportive environment.",
+      "Project Funding: Begin accepting project proposals and funding creative projects through CREA token and DAO.",
+    ],
+  },
+  {
+    title: "Phase 4: Platform Expansion and  Growth",
+    dateRange: "(April-August)",
+    description: [
+      "Objective: Expand the functionality and reach of the platform, attract a wider audience, and establish Creative Catalyst as the leading platform for creative projects.",
+      "Key Events:",
+      "Public Launch: Launch the public version of the Creative Catalyst platform, making it available to all users.",
+      "Partnership Development: Secure partnerships with creative organizations, festivals, galleries, and other stakeholders.",
+      "Developing New Features: Introduce new features and functionality to enhance the capabilities of the platform, such as NFT integration, collaboration tools, and educational resources.",
+      "Marketing and Promotion: Conduct ongoing marketing campaigns to promote the platform and attract new users.",
+    ],
+  },
+  {
+    title: "Phase 5: Ecosystem  Expansion and Sustainability",
+    dateRange: "(September - ongoing)",
+    description: [
+      "Objective: Ensure long-term sustainability and growth by expanding the ecosystem, fostering innovation, and supporting global creative initiatives.",
+      "Key Focus Areas:",
+      "Global Outreach: Expand CREA’s presence internationally by collaborating with creative communities and influencers worldwide.",
+      "Sustainability Initiatives: Develop strategies to support sustainable practices within the creative industry, promoting green technologies and eco-friendly projects.",
+      "Continuous Improvement: Establish a feedback loop to capture user input and continuously refine the platform's features and services to better meet community needs.",
+      "Innovation and Research: Invest in continuous research and development to stay at the forefront of technological advances and creative methodologies.",
+    ],
+  },
+];
 
 const WhitePaper = () => {
   return (
@@ -21,15 +84,50 @@ const WhitePaper = () => {
       </div>
       <section className="container mt-24 flex flex-col items-center relative">
         <Effect className="absolute right-0" />
-        <div>
-          <Effect className="absolute right-40 bottom-0 rotate-180" />
-          <Effect className="absolute right-40 bottom-0 -rotate-180" />
+        <div className="absolute right-40 bottom-0 w-12">
+          <Effect className="rotate-12 ml-auto block" />
+          <Effect className="-rotate-180" />
+        </div>
+        <Effect className="absolute left-28 bottom-0" />
+        <div className="absolute left-0 w-12">
+          <Effect className="rotate-12 ml-auto block" />
+          <Effect className="-rotate-180" />
         </div>
         <h1 className="text-8xl font-bold text-white">THE WHITEPAPER</h1>
         <button className="mt-16 text-white text-2xl font-semibold bg-primary rounded-full px-6 py-2 gap-x-4 flex flex-row items-center">
           <span>DOWNLOAD</span>
           <Dl />
         </button>
+      </section>
+      <section className="mt-36 px-16">
+        <h2 className="font-semibold text-6xl text-white">The Roadmap</h2>
+        <div className="mt-20 space-y-8">
+          {steperList.map((item) => (
+            <div key={item.title} className="flex flex-row justify-between">
+              <div className="flex flex-row w-4/12 flex-none">
+                <div className="flex flex-col items-center">
+                  <OlSteper />
+                  <LiSteper />
+                </div>
+                <div className="flex flex-col ml-11">
+                  <h6 className="text-4xl font-bold text-white">
+                    {item.title}
+                  </h6>
+                  <span className="text-3xl text-white font-light">
+                    {item.dateRange}
+                  </span>
+                </div>
+              </div>
+              <ul className="space-y-2 list-disc pl-8">
+                {item.description.map((step) => (
+                  <li key={step} className="text-xl font-light text-white">
+                    {step}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </section>
     </main>
   );
