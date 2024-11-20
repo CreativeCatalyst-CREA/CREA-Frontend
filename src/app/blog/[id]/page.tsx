@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import {notFound} from 'next/navigation';
-import {use, useState} from 'react';
+import {use} from 'react';
 import {cardData} from './data';
 import BlogPostDetail from '@/components/blog/blog-post-detail';
 

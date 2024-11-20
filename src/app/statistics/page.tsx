@@ -1,12 +1,12 @@
-import { DonutChart } from "@/components/statistics/donut-chart";
-import Image from "next/image";
+import {DonutChart} from '@/components/statistics/donut-chart';
+import Image from 'next/image';
 
 const data = [
-  { name: "Gants", value: 15 },
-  { name: "Investment Pool", value: 15 },
-  { name: "Investors", value: 40 },
-  { name: "Community", value: 20 },
-  { name: "Development Team", value: 10 },
+  {name: 'Gants', value: 15},
+  {name: 'Investment Pool', value: 15},
+  {name: 'Investors', value: 40},
+  {name: 'Community', value: 20},
+  {name: 'Development Team', value: 10},
 ];
 
 const Statistics = () => {
@@ -14,25 +14,15 @@ const Statistics = () => {
     <main
       className="overflow-hidden pb-40"
       style={{
-        backdropFilter: "blur(12px)",
-        background: "rgba(0, 0, 0, 0.08)",
+        backdropFilter: 'blur(12px)',
+        background: 'rgba(0, 0, 0, 0.08)',
       }}
     >
       <div className="fixed -top-96 right-0 -z-10 size-[800px] -rotate-45">
-        <Image
-          src="/img/noisy-gradients.png"
-          fill
-          alt=""
-          className="blur-[300px]"
-        />
+        <Image src="/img/noisy-gradients.png" fill alt="" className="blur-[300px]" />
       </div>
       <div className="fixed -bottom-96 left-0 -z-10 size-[800px] -rotate-45">
-        <Image
-          src="/img/noisy-gradients.png"
-          fill
-          alt=""
-          className="blur-[300px]"
-        />
+        <Image src="/img/noisy-gradients.png" fill alt="" className="blur-[300px]" />
       </div>
       <section className="container mt-24 flex flex-col items-center">
         <h1 className="text-center text-8xl font-bold text-white">

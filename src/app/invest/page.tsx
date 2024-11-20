@@ -18,7 +18,7 @@ const Invest = () => {
       </div>
       <section className="container mt-24 flex flex-col items-center">
         <h1 className="text-8xl font-bold text-white">THE CONCEPT</h1>
-        <h5 className="text-primary mt-12 text-3xl font-medium">Inspiring creativity building the future</h5>
+        <h5 className="mt-12 text-3xl font-medium text-primary">Inspiring creativity building the future</h5>
         <p className="mt-8 text-center font-extralight leading-8 text-white">
           Creative Catalyst (CREA) is a pioneering hybrid platform that blends centralized and decentralized functions to empower creative individuals and industries. By integrating crypto investment and blockchain technology, CREA aims to elevate the prestige of creativity,
           provide essential funding, and foster industry growth while making cryptocurrency accessible to a broader audience.
