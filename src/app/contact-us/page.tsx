@@ -16,12 +16,12 @@ const ContactUs = () => {
         <Image src="/img/noisy-gradients.png" fill alt="" className="blur-[200px]" />
       </div>
       <section className="container mt-24 flex flex-col items-center">
-        <h1 className="text-center text-8xl font-bold text-white">THE FAQ</h1>
+        <h1 className="text-center text-3xl font-bold text-white lg:text-8xl">CONTACT</h1>
       </section>
-      <section className="container mt-24">
+      <section className="container mt-16 lg:mt-24">
         <div className="flex flex-row overflow-hidden rounded-xl">
-          <Image src="/img/contact-us.jpeg" width={477} height={560} alt="contact us" className="object-cover object-right" />
-          <div className="flex w-6/12 flex-col gap-y-6 bg-[#141718] p-10">
+          <Image src="/img/contact-us.jpeg" width={477} height={560} alt="contact us" className="hidden object-cover object-right lg:block" />
+          <div className="flex w-full flex-col gap-y-6 bg-[#141718] p-10 lg:w-6/12">
             <div className="flex flex-col">
               <label htmlFor="full-name" className="text-gray-100">
                 Full Name

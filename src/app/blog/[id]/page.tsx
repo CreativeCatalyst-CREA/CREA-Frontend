@@ -24,11 +24,11 @@ const BlogPost = ({params: paramsPromise}: {params: Promise<{id: string}>}) => {
       <div className="fixed left-0 top-72 -z-10">
         <Image src="/img/noisy-gradients.png" alt="" width={800} height={800} className="blur-[400px]" />
       </div>
-      <section className="container mt-24 flex flex-col items-center">
+      <section className="container mt-24 hidden flex-col items-center lg:flex">
         <h1 className="text-8xl font-bold text-white">{card.cardTitle}</h1>
       </section>
-      <section className="container mt-24">
-        <BlogPostDetail faq={card.Faq} />
+      <section className="container mt-8 lg:mt-24">
+        <BlogPostDetail faq={card.Faq} title={card.cardTitle} />
       </section>
     </main>
   );

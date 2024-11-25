@@ -11,19 +11,19 @@ type DataItem = {
 type DonutChartProps = {
   width: number;
   height: number;
+  marginX: number;
   data: DataItem[];
 };
 
-const MARGIN_X = 300;
-const MARGIN_Y = 50;
+const MARGIN_Y = 10;
 const INFLEXION_PADDING = 50; // space between donut and label inflexion point
 
 const colors = ['#6740CC', '#B024FF', '#DA5CDA', '#603468', '#9600CB'];
 
-export const DonutChart = ({width, height, data}: DonutChartProps) => {
+export const DonutChart = ({width, height, data, marginX}: DonutChartProps) => {
   const ref = useRef<SVGGElement>(null);
 
-  const radius = Math.min(width - 2 * MARGIN_X, height - 2 * MARGIN_Y) / 2;
+  const radius = Math.min(width - 2 * marginX, height - 2 * MARGIN_Y) / 2;
   const innerRadius = radius / 2;
 
   const pie = useMemo(() => {
@@ -78,9 +78,9 @@ export const DonutChart = ({width, height, data}: DonutChartProps) => {
         <text x={centroid[0] + (isRightLabel ? -10 : 10)} y={centroid[1]} textAnchor={textAnchor} dominantBaseline="middle" className="fill-white text-xl font-bold">
           {grp.value} %
         </text>
-        <line x1={centroid[0]} y1={centroid[1]} x2={inflexionPoint[0]} y2={inflexionPoint[1]} className="fill-white/50 stroke-white/50" />
-        <line x1={inflexionPoint[0]} y1={inflexionPoint[1]} x2={labelPosX} y2={inflexionPoint[1]} className="fill-white/50 stroke-white/50" />
-        <text x={labelPosX + (isRightLabel ? 2 : -2)} y={inflexionPoint[1]} textAnchor={textAnchor} dominantBaseline="middle" className="fill-white text-3xl">
+        <line x1={centroid[0]} y1={centroid[1]} x2={inflexionPoint[0]} y2={inflexionPoint[1]} className="hidden fill-white/50 stroke-white/50 lg:block" />
+        <line x1={inflexionPoint[0]} y1={inflexionPoint[1]} x2={labelPosX} y2={inflexionPoint[1]} className="hidden fill-white/50 stroke-white/50 lg:block" />
+        <text x={labelPosX + (isRightLabel ? 2 : -2)} y={inflexionPoint[1]} textAnchor={textAnchor} dominantBaseline="middle" className="hidden fill-white text-3xl lg:block">
           {label}
         </text>
       </g>
@@ -88,13 +88,28 @@ export const DonutChart = ({width, height, data}: DonutChartProps) => {
   });
 
   return (
-    <svg width={width} height={height} className="mx-auto">
-      <g transform={`translate(${width / 2}, ${height / 2})`} className="donut-chart-container" ref={ref}>
-        {shapes}
-        <text x="0%" y="0%" textAnchor="middle" dy=".3em" className="fill-white text-6xl font-bold">
-          1B
-        </text>
-      </g>
-    </svg>
+    <div className="flex flex-col">
+      <div className="mx-auto flex flex-col gap-y-5 lg:hidden">
+        {data.map((item, index) => (
+          <div key={item.name} className="items-cente flex flex-row items-center gap-x-2">
+            <div
+              className="size-5 rounded"
+              style={{
+                backgroundColor: colors[index],
+              }}
+            ></div>
+            <span className="text-lg text-white">{item.name}</span>
+          </div>
+        ))}
+      </div>
+      <svg width={width} height={height} className="mx-">
+        <g transform={`translate(${width / 2}, ${height / 2})`} className="donut-chart-container" ref={ref}>
+          {shapes}
+          <text x="0%" y="0%" textAnchor="middle" dy=".3em" className="fill-white text-6xl font-bold">
+            1B
+          </text>
+        </g>
+      </svg>
+    </div>
   );
 };

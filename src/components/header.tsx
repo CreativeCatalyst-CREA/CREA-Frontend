@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
+import Menu from '@/assets/icon/menu.svg';
 
 const navbarLinks = [
   {name: 'Home', url: '/'},
@@ -25,20 +26,21 @@ const Header = () => {
           <Image src="/img/logo.png" alt="Creative Catalyst Logo" title="Logo" width={123} height={37} />
         </div>
         <div>
-          <ul className="flex flex-row items-center gap-x-10">
+          <ul className="hidden flex-row items-center gap-x-10 lg:flex">
             {navbarLinks.map((item) => (
               <li key={item.url}>
-                <Link
-                  href={item.url}
-                  className={`app-base-transform text-sm font-medium underline-offset-4 hover:underline ${pathname === item.url && 'text-primary decoration-primary'}`}
-                >
+                <Link href={item.url} className={`app-base-transform text-sm font-medium underline-offset-4 hover:underline ${pathname === item.url && 'text-primary decoration-primary'}`}>
                   {item.name}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
-        <div></div>
+        <div>
+          <button className="block lg:hidden">
+            <Menu />
+          </button>
+        </div>
       </nav>
     </header>
   );

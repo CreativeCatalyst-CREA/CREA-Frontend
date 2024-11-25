@@ -43,12 +43,12 @@ const Footer = () => {
   return (
     <footer className="w-full bg-white pb-7 pt-14">
       <div className="container flex flex-col">
-        <div className="flex flex-row items-center justify-between">
+        <div className="flex flex-col items-center justify-between lg:flex-row">
           <div className="flex flex-row divide-x divide-black">
             <Image src="/img/logo.png" alt="Creative Catalyst Logo" title="Logo" width={123} height={37} className="pr-7" />
             <h5 className="pl-7 text-2xl font-medium">CREATIVE CATALYST</h5>
           </div>
-          <div className="flex flex-row items-center gap-x-9">
+          <div className="mt-10 flex flex-row items-center justify-between gap-x-9 lg:mt-0 lg:justify-start">
             {socialMediaLinks.map((item) => (
               <a href={item.link} key={item.link} title={item.title}>
                 {item.icon}
@@ -57,8 +57,8 @@ const Footer = () => {
           </div>
         </div>
         <hr className="mb-7 mt-16" />
-        <div className="flex flex-row items-center">
-          <span className="mr-16 text-xs">Copyright © 2024 . All rights reserved</span>
+        <div className="flex flex-col lg:flex-row lg:items-center">
+          <span className="text-xs lg:mr-16">Copyright © 2024 . All rights reserved</span>
           <div className="space-x-6">
             <a href="/" className="text-xs font-semibold">
               Privacy Policy

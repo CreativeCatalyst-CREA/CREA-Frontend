@@ -8,9 +8,10 @@ import {useRouter} from 'next/navigation';
 
 export interface BlogPostDetailProps {
   faq: Array<{title: string; content: string}>;
+  title: string;
 }
 
-const BlogPostDetail = ({faq}: BlogPostDetailProps) => {
+const BlogPostDetail = ({faq, title}: BlogPostDetailProps) => {
   const [count, setCount] = useState<number>(0);
   const router = useRouter();
 
@@ -23,11 +24,17 @@ const BlogPostDetail = ({faq}: BlogPostDetailProps) => {
   };
 
   return (
-    <div className="relative rounded-3xl bg-white px-9 py-4">
-      <button className="absolute -right-5 -top-5 size-6" onClick={() => router.back()}>
-        <X className="size-6" />
+    <div className="relative rounded-lg bg-white p-6 lg:rounded-3xl lg:px-9 lg:py-4">
+      <button className="absolute -right-5 -top-5 hidden size-6 lg:block" onClick={() => router.back()}>
+        <X className="size-6 stroke-white" />
       </button>
-      <div className="space-y-6">
+      <div className="flex flex-row items-center justify-between border-b border-black pb-6 lg:hidden">
+        <h1 className="text-xl font-bold">{title}</h1>
+        <button className="size-6" onClick={() => router.back()}>
+          <X className="size-6 stroke-black" />
+        </button>
+      </div>
+      <div className="mt-6 space-y-6 lg:mt-0">
         {faq[count || 0].content.split('\n').map((line, index) => (
           <div key={index} dangerouslySetInnerHTML={{__html: line}} />
         ))}

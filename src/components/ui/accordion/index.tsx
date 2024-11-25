@@ -15,7 +15,7 @@ const AccordionTrigger = React.forwardRef<React.ElementRef<typeof AccordionPrimi
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        'app-base-transform flex flex-1 items-center justify-center bg-white py-4 text-4xl font-semibold uppercase leading-8 text-black [&[data-state=closed]]:rounded-full [&[data-state=open]>svg]:rotate-180 [&[data-state=open]]:rounded-t-3xl [&[data-state=open]]:bg-primary [&[data-state=open]]:text-white',
+        'app-base-transform flex flex-1 items-center bg-white px-8 py-4 text-xl font-semibold uppercase leading-8 text-black lg:justify-center lg:text-4xl [&[data-state=closed]]:rounded-full [&[data-state=open]>svg]:rotate-180 [&[data-state=open]]:rounded-t-3xl [&[data-state=open]]:bg-primary [&[data-state=open]]:text-white',
         className
       )}
       {...props}
@@ -29,7 +29,7 @@ AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
 const AccordionContent = React.forwardRef<React.ElementRef<typeof AccordionPrimitive.Content>, React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>>(({className, children, ...props}, ref) => (
   <AccordionPrimitive.Content ref={ref} className="app-base-transform overflow-hidden rounded-b-3xl bg-white text-sm text-black data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down" {...props}>
-    <div className={cn('px-10 py-10 text-center text-xl leading-8 text-black', className)}>{children}</div>
+    <div className={cn('px-8 py-4 leading-8 text-black lg:px-10 lg:py-10 lg:text-center lg:text-xl', className)}>{children}</div>
   </AccordionPrimitive.Content>
 ));
 

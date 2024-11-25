@@ -25,12 +25,17 @@ const Statistics = () => {
         <Image src="/img/noisy-gradients.png" fill alt="" className="blur-[300px]" />
       </div>
       <section className="container mt-24 flex flex-col items-center">
-        <h1 className="text-center text-8xl font-bold text-white">
+        <h1 className="text-center text-2xl font-bold text-white lg:text-8xl">
           THE ICO <br /> ALLOCATION
         </h1>
       </section>
-      <section className="container mt-24">
-        <DonutChart data={data} width={1024} height={600} />
+      <section className="container mt-16 lg:mt-24">
+        <div className="hidden lg:block">
+          <DonutChart data={data} width={1024} height={600} marginX={300} />
+        </div>
+        <div className="block lg:hidden">
+          <DonutChart data={data} width={700} height={700} marginX={100} />
+        </div>
       </section>
     </main>
   );

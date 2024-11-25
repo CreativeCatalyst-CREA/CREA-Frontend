@@ -88,34 +88,34 @@ const WhitePaper = () => {
           <Effect className="ml-auto block rotate-12" />
           <Effect className="-rotate-180" />
         </div>
-        <h1 className="text-8xl font-bold text-white">THE WHITEPAPER</h1>
-        <button className="mt-16 flex flex-row items-center gap-x-4 rounded-full bg-primary px-6 py-2 text-2xl font-semibold text-white">
+        <h1 className="text-3xl font-bold text-white lg:text-8xl">THE WHITEPAPER</h1>
+        <button className="mt-8 flex flex-row items-center gap-x-4 rounded-full bg-primary px-6 py-2 font-semibold text-white lg:mt-16 lg:text-2xl">
           <span>DOWNLOAD</span>
           <Dl />
         </button>
       </section>
-      <section className="mt-36 px-16">
-        <h2 className="text-6xl font-semibold text-white">The Roadmap</h2>
-        <div className="mt-20 space-y-8">
+      <section className="mt-16 px-10 lg:mt-36 lg:px-16">
+        <h2 className="text-3xl font-semibold text-white lg:text-6xl">The Roadmap</h2>
+        <div className="mt-10 space-y-12 lg:mt-20 lg:space-y-8">
           {steperList.map((item) => (
-            <div key={item.title} className="flex flex-row justify-between">
-              <div className="flex w-4/12 flex-none flex-row">
-                <div className="flex flex-col items-center">
-                  <OlSteper />
-                  <LiSteper />
-                </div>
-                <div className="ml-11 flex flex-col">
-                  <h6 className="text-4xl font-bold text-white">{item.title}</h6>
-                  <span className="text-3xl font-light text-white">{item.dateRange}</span>
-                </div>
+            <div key={item.title} className="flex flex-row">
+              <div className="flex flex-col items-center">
+                <OlSteper />
+                <LiSteper />
               </div>
-              <ul className="list-disc space-y-2 pl-8">
-                {item.description.map((step) => (
-                  <li key={step} className="text-xl font-light text-white">
-                    {step}
-                  </li>
-                ))}
-              </ul>
+              <div className="flex flex-col lg:flex-row">
+                <div className="ml-6 flex flex-none flex-col lg:ml-11 lg:w-[450px]">
+                  <h6 className="font-bold text-white lg:text-4xl">{item.title}</h6>
+                  <span className="text-xs font-light text-white lg:text-3xl">{item.dateRange}</span>
+                </div>
+                <ul className="ml-10 mt-5 list-disc space-y-2 lg:ml-0 lg:mt-0 lg:pl-8">
+                  {item.description.map((step) => (
+                    <li key={step} className="text-xl font-light text-white">
+                      {step}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

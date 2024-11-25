@@ -14,9 +14,9 @@ const Blog = () => {
         <Image src="/img/noisy-gradients.png" fill alt="" className="rotate-90 blur-[300px]" />
       </div>
       <section className="container mt-24 flex flex-col items-center">
-        <h1 className="text-8xl font-bold text-white">THE BLOG</h1>
+        <h1 className="text-3xl font-semibold text-white lg:text-8xl lg:font-bold">THE BLOG</h1>
       </section>
-      <section className="mt-24">
+      <section className="mt-16 lg:mt-24">
         <BlogSlider />
       </section>
     </main>
