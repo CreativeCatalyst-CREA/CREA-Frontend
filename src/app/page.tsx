@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <main className="h-svh bg-[url('/img/bg-home.png')] bg-cover bg-fixed bg-center bg-no-repeat pt-16">
@@ -6,11 +8,15 @@ export default function Home() {
           Creative Catalyst <br className="hidden lg:block" /> Dive into the
           <span className="text-primary">Future </span>
         </h1>
-        <p className="mb-6 mt-6 text-white lg:mb-20 lg:mt-2.5 lg:text-4xl">Experience art like never before</p>
+        <p className="mb-6 mt-6 text-white lg:mb-20 lg:mt-2.5 lg:text-4xl">Unlocking Possibilities for Creatives with Crypto Innovation</p>
       </section>
       <section className="container mt-28 flex flex-row justify-center gap-x-20">
-        <button className="app-base-transform w-36 rounded-full border-4 border-white py-2 font-semibold text-primary hover:border-primary hover:bg-primary hover:text-white lg:w-60 lg:py-6 lg:text-2xl">WHITEPAPER</button>
-        <button className="app-base-transform w-36 rounded-full border-4 border-white py-2 font-semibold text-primary hover:border-primary hover:bg-primary hover:text-white lg:w-60 lg:py-6 lg:text-2xl">INVEST</button>
+        <Link href="/white-paper" className="app-base-transform w-36 rounded-full border-4 border-white py-2 text-center font-semibold text-primary hover:border-primary hover:bg-primary hover:text-white lg:w-60 lg:py-6 lg:text-2xl">
+          WHITEPAPER
+        </Link>
+        <Link href="/invest" className="app-base-transform w-36 rounded-full border-4 border-white py-2 text-center font-semibold text-primary hover:border-primary hover:bg-primary hover:text-white lg:w-60 lg:py-6 lg:text-2xl">
+          INVEST
+        </Link>
       </section>
     </main>
   );
