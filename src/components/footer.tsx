@@ -5,6 +5,7 @@ import Linkedin from '@/assets/icon/linkedin.svg';
 import Telegram from '@/assets/icon/telegram.svg';
 import Twitter from '@/assets/icon/twitter.svg';
 import Vk from '@/assets/icon/vk.svg';
+import Link from 'next/link';
 
 const socialMediaLinks = [
   {
@@ -50,9 +51,9 @@ const Footer = () => {
           </div>
           <div className="mt-10 flex flex-row items-center justify-between gap-x-9 lg:mt-0 lg:justify-start">
             {socialMediaLinks.map((item) => (
-              <a href={item.link} key={item.link} title={item.title}>
+              <Link href={item.link} key={item.link} title={item.title}>
                 {item.icon}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -60,12 +61,12 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row lg:items-center">
           <span className="text-xs lg:mr-16">Copyright © 2024 . All rights reserved</span>
           <div className="space-x-6">
-            <a href="/" className="text-xs font-semibold">
+            <Link href="/" className="text-xs font-semibold">
               Privacy Policy
-            </a>
-            <a href="/" className="text-xs font-semibold">
+            </Link>
+            <Link href="/" className="text-xs font-semibold">
               Terms of Use
-            </a>
+            </Link>
           </div>
         </div>
       </div>

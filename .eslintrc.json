@@ -8,6 +8,13 @@
     "@typescript-eslint/no-explicit-any": "off",
     "no-empty-function": "error",
     "@typescript-eslint/no-empty-function": "error",
-    "prettier/prettier": "error"
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/prefer-ts-expect-error":"off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }

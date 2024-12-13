@@ -1,5 +1,11 @@
-import {DonutChart} from '@/components/statistics/donut-chart';
+'use client';
+
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+const DonutChart = dynamic(() => import('@/components/statistics/donut-chart'), {
+  ssr: false,
+});
 
 const data = [
   {name: 'Gants', value: 15},

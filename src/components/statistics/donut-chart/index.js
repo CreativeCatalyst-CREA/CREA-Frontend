@@ -4,30 +4,19 @@ import {useMemo, useRef} from 'react';
 import * as d3 from 'd3';
 import './index.css';
 
-type DataItem = {
-  name: string;
-  value: number;
-};
-type DonutChartProps = {
-  width: number;
-  height: number;
-  marginX: number;
-  data: DataItem[];
-};
-
 const MARGIN_Y = 10;
 const INFLEXION_PADDING = 50; // space between donut and label inflexion point
 
 const colors = ['#6740CC', '#B024FF', '#DA5CDA', '#603468', '#9600CB'];
 
-export const DonutChart = ({width, height, data, marginX}: DonutChartProps) => {
-  const ref = useRef<SVGGElement>(null);
+const DonutChart = ({width, height, data, marginX}) => {
+  const ref = useRef(null);
 
   const radius = Math.min(width - 2 * marginX, height - 2 * MARGIN_Y) / 2;
   const innerRadius = radius / 2;
 
   const pie = useMemo(() => {
-    const pieGenerator = d3.pie<any, DataItem>().value((d) => d.value);
+    const pieGenerator = d3.pie().value((d) => d.value);
     return pieGenerator(data);
   }, [data]);
 
@@ -73,7 +62,6 @@ export const DonutChart = ({width, height, data, marginX}: DonutChartProps) => {
           }
         }}
       >
-        {/* @ts-ignore */}
         <path d={slicePath} fill={colors[i]} />
         <text x={centroid[0] + (isRightLabel ? -10 : 10)} y={centroid[1]} textAnchor={textAnchor} dominantBaseline="middle" className="fill-white text-xl font-bold">
           {grp.value} %
@@ -113,3 +101,5 @@ export const DonutChart = ({width, height, data, marginX}: DonutChartProps) => {
     </div>
   );
 };
+
+export default DonutChart;

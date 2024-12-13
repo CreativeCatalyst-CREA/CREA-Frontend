@@ -8,7 +8,6 @@ import SwiperCore from 'swiper';
 import TeamItem from './team-item';
 import {ITeamPersonList} from '@/types/team';
 import ArrowLeft from '@/assets/icon/arrow-left.svg';
-import ArrowRight from '@/assets/icon/arrow-right.svg';
 
 const TeamMobile = ({teamPersonList}: ITeamPersonList) => {
   const [swiper, setMySwiper] = useState<SwiperCore>();
