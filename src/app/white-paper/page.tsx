@@ -3,6 +3,7 @@ import Dl from '@/assets/icon/dl.svg';
 import OlSteper from '@/assets/icon/ol-steper.svg';
 import LiSteper from '@/assets/icon/li-steper.svg';
 import Effect from '@/assets/icon/effect.svg';
+import Link from 'next/link';
 
 const steperList = [
   {
@@ -89,10 +90,10 @@ const WhitePaper = () => {
           <Effect className="-rotate-180" />
         </div>
         <h1 className="text-3xl font-bold text-white lg:text-8xl">THE WHITEPAPER</h1>
-        <button className="mt-8 flex flex-row items-center gap-x-4 rounded-full bg-primary px-6 py-2 font-semibold text-white lg:mt-16 lg:text-2xl">
+        <Link href="/Whitepaper_ Creative_Catalyst_(CREA).docx" className="mt-8 flex flex-row items-center gap-x-4 rounded-full bg-primary px-6 py-2 font-semibold text-white lg:mt-16 lg:text-2xl">
           <span>DOWNLOAD</span>
           <Dl />
-        </button>
+        </Link>
       </section>
       <section className="mt-16 px-10 lg:mt-36 lg:px-16">
         <h2 className="text-3xl font-semibold text-white lg:text-6xl">The Roadmap</h2>
