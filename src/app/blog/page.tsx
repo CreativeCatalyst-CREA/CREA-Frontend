@@ -16,7 +16,7 @@ const Blog = () => {
       <section className="container mt-24 flex flex-col items-center">
         <h1 className="text-3xl font-semibold text-white lg:text-8xl lg:font-bold">THE BLOG</h1>
       </section>
-      <section className="mt-16 lg:mt-24">
+      <section className="bg-red-400 pt-8 lg:mt-24">
         <BlogSlider />
       </section>
     </main>

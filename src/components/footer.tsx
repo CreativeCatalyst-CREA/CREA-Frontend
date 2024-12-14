@@ -45,9 +45,9 @@ const Footer = () => {
     <footer className="w-full bg-white pb-7 pt-14">
       <div className="container flex flex-col">
         <div className="flex flex-col items-center justify-between lg:flex-row">
-          <div className="flex flex-row divide-x divide-black">
-            <Image src="/img/logo.png" alt="Creative Catalyst Logo" title="Logo" width={123} height={37} className="pr-7" />
-            <h5 className="pl-7 text-2xl font-medium">CREATIVE CATALYST</h5>
+          <div className="flex flex-row items-center divide-x divide-black">
+            <img src="/img/logo.png" alt="Creative Catalyst Logo" title="Logo" className="w-32 pr-4 lg:pr-7" />
+            <h5 className="pl-4 text-left font-medium lg:pl-7 lg:text-2xl">CREATIVE CATALYST</h5>
           </div>
           <div className="mt-10 flex flex-row items-center justify-between gap-x-9 lg:mt-0 lg:justify-start">
             {socialMediaLinks.map((item) => (

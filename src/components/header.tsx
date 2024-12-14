@@ -6,7 +6,7 @@ import {usePathname} from 'next/navigation';
 import Menu from '@/assets/icon/menu.svg';
 import MenuOpen from '@/assets/icon/menu-open.svg';
 import X from '@/assets/icon/x.svg';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 const navbarLinks = [
   {name: 'Home', url: '/'},
@@ -22,6 +22,10 @@ const navbarLinks = [
 const Header = () => {
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState(false);
+
+  useEffect(() => {
+    setOpenMenu(false);
+  }, [pathname]);
 
   return (
     <header className="w-full bg-white">

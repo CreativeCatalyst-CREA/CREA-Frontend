@@ -8,7 +8,7 @@ const DonutChart = dynamic(() => import('@/components/statistics/donut-chart'), 
 });
 
 const data = [
-  {name: 'Gants', value: 15},
+  {name: 'Grants', value: 15},
   {name: 'Investment Pool', value: 15},
   {name: 'Investors', value: 40},
   {name: 'Community', value: 20},
@@ -37,10 +37,10 @@ const Statistics = () => {
       </section>
       <section className="container mt-16 lg:mt-24">
         <div className="hidden lg:block">
-          <DonutChart data={data} width={1024} height={600} marginX={300} />
+          <DonutChart data={data} width={1020} height={600} radius={200} />
         </div>
         <div className="block lg:hidden">
-          <DonutChart data={data} width={700} height={700} marginX={100} />
+          <DonutChart data={data} width={450} height={300} radius={140} />
         </div>
       </section>
     </main>
