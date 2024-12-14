@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Discord from '@/assets/icon/discord.svg';
 import Instagram from '@/assets/icon/instagram.svg';
 import Linkedin from '@/assets/icon/linkedin.svg';
