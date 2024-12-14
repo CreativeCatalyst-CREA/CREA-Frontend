@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <main className="h-svh bg-[url('/img/bg-home.png')] bg-cover bg-fixed bg-center bg-no-repeat pt-16">
-      <section className="mx-auto flex w-96 flex-col rounded-3xl bg-black/50 text-center lg:container">
+      <section className="mx-auto flex w-96 flex-col rounded-3xl bg-black/50 text-center lg:container md:w-[450px] lg:w-auto">
         <h1 className="mt-6 text-4xl font-bold leading-snug tracking-wider text-white shadow-2xl lg:text-7xl lg:leading-[120px]">
           Creative Catalyst <br className="hidden lg:block" /> Dive into the
           <span className="text-primary">Future </span>

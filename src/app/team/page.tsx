@@ -32,13 +32,13 @@ const Team = () => {
         background: 'rgba(0, 0, 0, 0.08)',
       }}
     >
-      <div className="fixed right-[512px] top-[512px] -z-10 size-[1000px]">
+      <div className="fixed -z-10 size-[1000px] lg:right-[512px] lg:top-[512px]">
         <Image src="/img/noisy-gradients.png" fill alt="" className="rotate-90 blur-[400px]" />
       </div>
       <section className="container mt-24 flex flex-col items-center">
         <h1 className="text-3xl font-bold text-white lg:text-8xl">THE TEAM</h1>
       </section>
-      <section className="container mt-24">
+      <section className="mt-24 lg:container">
         <div className="hidden lg:block">
           <TeamDesktop teamPersonList={personList.teamPersonList} />
         </div>
