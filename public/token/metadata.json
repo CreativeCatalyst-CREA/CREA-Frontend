@@ -1,0 +1,18 @@
+{
+    "name": "Creative Catalyst",
+    "description": "The CREA token serves as the primary currency within the Creative Catalyst ecosystem. It is used for transactions on the platform, including project funding, voting on creative initiatives, and accessing premium features and resources.",
+    "symbol": "CREA",
+    "decimals": "9",
+    "image": "https://www.creativecatalyst.art/img/logo-round-blue.png",
+    "social": [
+        "https://discord.com/invite/c7hBh426",
+        "https://t.me/mycreativecatalyst",
+        "https://vk.com/creative_catalyst",
+        "https://www.linkedin.com/company/creative-catalyst-crea",
+        "https://www.instagram.com/crea_web3/profilecard",
+        "https://x.com/crea_catalyst"
+    ],
+    "websites": [
+        "https://www.creativecatalyst.art"
+    ]
+}
